@@ -14,7 +14,9 @@
 		global $sqlpwd;
 		global $sqlloc;
 		global $dbname;
-		require("$path/class/class.sql.php");
+      	if(!class_exists("sql")){
+			require("$path/class/class.sql.php");
+        }
 		$sql = new sql();
 		if(isset($sqlusr)){
 			$sql->usr = $sqlusr;
@@ -30,24 +32,24 @@
 		global $path;
 		if(!class_exists("url")){
 			require("$path/class/class.url.php");
-			$requrl = new url();
-			return $requrl;
 		}
-		return false;
+      	$requrl = new url();
+		return $requrl;
 	}
 	function l_check_mobile(){
 		global $path;
 		if(!class_exists("check")){
 			require("$path/class/class.checkmobile.php");
-			$check = new check();
-			return $check;
 		}
-		return false;
+		$check = new check();
+		return $check;
 	}
 	function l_recaptcha(){
 		global $path;
 		global $recaptcha_code;
-		require("$path/class/class.recaptcha.php");
+      	if(!class_exists("recaptcha")){
+			require("$path/class/class.recaptcha.php");
+        }
 		$recaptcha = new recaptcha();
 		if(isset($recaptcha_code) && $recaptcha_code){
 			$recaptcha->secret = $recaptcha_code;
