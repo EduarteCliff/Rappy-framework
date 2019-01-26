@@ -1,3 +1,10 @@
+<!--
+	oxdl_frame 核心
+	ver 1.2
+	date 2019/1/26
+	
+	请于文件最前端引用
+-->
 <?php
 	require("../config.php");
 	function l_sql(){
