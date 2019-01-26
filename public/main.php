@@ -27,14 +27,18 @@
 	function l_url(){
 		if(!class_exists("url")){
 			require("../class/class.url.php");
+			$requrl = new url();
+			return $requrl;
 		}
-		$requrl = new url();
-		return $requrl;
+		return false;
 	}
 	function l_check_mobile(){
-		require("../class/class.checkmobile.php");
-		$check = new check();
-		return $check;
+		if(!class_exists("check")){
+			require("../class/class.checkmobile.php");
+			$check = new check();
+			return $check;
+		}
+		return false;
 	}
 	function l_recaptcha(){
 		global $recaptcha_code;
