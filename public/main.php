@@ -6,13 +6,15 @@
 	请于文件最前端引用
 -->
 <?php
-	require("../config.php");
+	$path = realpath($_SERVER['DOCUMENT_ROOT'] . "/../");
+	require("$path/config.php");
 	function l_sql(){
+		global $path;
 		global $sqlusr;
 		global $sqlpwd;
 		global $sqlloc;
 		global $dbname;
-		require("../class/class.sql.php");
+		require("$path/class/class.sql.php");
 		$sql = new sql();
 		if(isset($sqlusr)){
 			$sql->usr = $sqlusr;
@@ -25,24 +27,27 @@
       	return $sql;
 	}
 	function l_url(){
+		global $path;
 		if(!class_exists("url")){
-			require("../class/class.url.php");
+			require("$path/class/class.url.php");
 			$requrl = new url();
 			return $requrl;
 		}
 		return false;
 	}
 	function l_check_mobile(){
+		global $path;
 		if(!class_exists("check")){
-			require("../class/class.checkmobile.php");
+			require("$path/class/class.checkmobile.php");
 			$check = new check();
 			return $check;
 		}
 		return false;
 	}
 	function l_recaptcha(){
+		global $path;
 		global $recaptcha_code;
-		require("../class/class.recaptcha.php");
+		require("$path/class/class.recaptcha.php");
 		$recaptcha = new recaptcha();
 		if(isset($recaptcha_code) && $recaptcha_code){
 			$recaptcha->secret = $recaptcha_code;
