@@ -1,8 +1,3 @@
-<!--
-	用户操作
-	ver 1.0
-	date 2019/1/26
--->
 <?php
 	public $check_str = "^(.+)\\sand\\s(.+)|(.+)\\sor(.+)\\s$";
 	public sql;

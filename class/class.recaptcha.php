@@ -1,8 +1,3 @@
-<!--
-	recaptcha China
-	ver 1.0
-	date 2019/1/26
--->
 <?php
 /*
 	方法

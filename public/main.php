@@ -1,13 +1,26 @@
-<!--
-	oxdl_frame 核心
-	ver 1.2
-	date 2019/1/26
-	
-	请于文件最前端引用
--->
 <?php
+/** oxdl frame核心
+  *	调用:
+  * require_once($_SERVER['DOCUMENT_ROOT'] ."main.php");
+*/
 	$path = realpath($_SERVER['DOCUMENT_ROOT'] . "/../");
 	require("$path/config.php");
+	function l_need_login(){
+		global $path;
+		if(!class_exists("decimal")){
+			require("$path/class/class.needlogin.php");
+		}
+		$login = new need_login();
+		return $login;
+	}
+	function l_dec(){
+		global $path;
+		if(!class_exists("decimal")){
+			require("$path/class/class.decimal.php");
+		}
+		$dec = new decimal();
+		return $dec;
+	}
 	function l_smtp(){
       	global $path;
       	global $smtpserver;

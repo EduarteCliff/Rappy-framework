@@ -1,8 +1,3 @@
-<!--
-	数据库操作系统
-	ver 1.0
-	date 2019/1/26
--->
 <?php
 /*
 	方法
@@ -30,6 +25,11 @@
                 	return 1;
                 }
             }
+		}
+		
+		function count_of($table){
+			$result = $this->query("select count(*) from '".$table."' where 1;");
+			return $result[0];
 		}
 	}
 ?>
