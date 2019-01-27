@@ -59,7 +59,15 @@
           <?php
           		if(isset($_GET["sendto"])){
                 	$mail = l_smtp();
-                  	$mail->sendmail($_GET["sendto"],"功能测试","功能测试");
+                  	$mail->Subject = "测试";
+					$mail->Body = "测试";
+					$mail->addAddress($_GET["sendto"],'USER');
+					if($mail->send()){
+						echo "<script>alert('发送成功');</script>";
+					}
+					else{
+						echo "<script>alert('发送失败');</script>";
+					}
                 }
           ?>
           </center>

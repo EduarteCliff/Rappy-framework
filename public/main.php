@@ -15,13 +15,32 @@
         global $smtpusr;
         global $smtppasswd;
         global $smtpname;
-    	if(!class_exists("smtp")){
-			require("$path/class/class.mail.php");
+		global $smtpssl;
+    	if(!class_exists("PHPMailer")){
+			require("$path/class/class.sendmail.php");
+			require("$path/class/class.smtp.php");
         }
-      	$smtp = new smtp($smtpserver,$smtpport,true,$smtpusr,$smtppasswd);
-      	$smtp->debug = false;
-      	$smtp->frm = $smtpname;
-      	return $smtp;
+      	$mail = new PHPMailer();
+		$mail->isSMTP();
+		$mail->SMTPAuth=true;
+		$mail->Host = $smtpserver;
+		if($smtpssl != ""){
+			//ssl or tls
+			$mail->SMTPSecure = $smtpssl;
+		}
+		//echo $mail->SMTPSecure;
+		$mail->Port = $smtpport;
+		//echo $mail->Port;
+		$mail->CharSet = 'UTF-8';
+		$mail->FromName = $smtpname;
+		$mail->Username = $smtpusr;
+		$mail->Password = $smtppasswd;
+		$mail->From = $smtpusr;
+		$mail->isHTML(true);
+		return $mail;
+		//$mail->addAddress($user,'USER');
+		//$mail->Subject = 
+		//$mail->Body = 
     }
 	function l_sql(){
 		global $path;
