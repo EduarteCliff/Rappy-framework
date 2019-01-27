@@ -1,7 +1,7 @@
 <?php
 /** oxdl frame核心
   *	调用:
-  * require_once($_SERVER['DOCUMENT_ROOT'] ."main.php");
+  * require_once($_SERVER['DOCUMENT_ROOT'] ."/main.php");
 */
 	$path = realpath($_SERVER['DOCUMENT_ROOT'] . "/../");
 	require("$path/config.php");
@@ -41,9 +41,7 @@
 			//ssl or tls
 			$mail->SMTPSecure = $smtpssl;
 		}
-		//echo $mail->SMTPSecure;
 		$mail->Port = $smtpport;
-		//echo $mail->Port;
 		$mail->CharSet = 'UTF-8';
 		$mail->FromName = $smtpname;
 		$mail->Username = $smtpusr;
@@ -51,9 +49,6 @@
 		$mail->From = $smtpusr;
 		$mail->isHTML(true);
 		return $mail;
-		//$mail->addAddress($user,'USER');
-		//$mail->Subject = 
-		//$mail->Body = 
     }
 	function l_sql(){
 		global $path;
