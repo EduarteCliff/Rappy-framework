@@ -13,8 +13,9 @@
 		public $secret;
 		
 		function __construct(){
+          	$path = realpath($_SERVER['DOCUMENT_ROOT'] . "/../");
 			if(!class_exists("url")){
-				require("../class/class.url.php");
+				require("$path/class/class.url.php");
 			}
 		}
 		

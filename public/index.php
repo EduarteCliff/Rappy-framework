@@ -52,6 +52,16 @@
         echo "http_req:<span style='color:red;'>failed</span>";
     }
 ?>
+          <form>
+            	<input type = "text" name="sendto">
+            	<button>发送测试邮件</button>
+          </form>
+          <?php
+          		if(isset($_GET["sendto"])){
+                	$mail = l_smtp();
+                  	$mail->sendmail($_GET["sendto"],"功能测试","功能测试");
+                }
+          ?>
           </center>
 	</body>
 </html>
