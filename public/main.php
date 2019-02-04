@@ -1,7 +1,10 @@
 <?php
-/** oxdl frame核心
-  *	调用:
+/** Rappy core
+  *	usage:
   * require_once($_SERVER['DOCUMENT_ROOT'] ."/main.php");
+  * version beta1.3
+  * Email i@oxdl.cn
+  * Do not use in production environment.
 */
 	$path = realpath($_SERVER['DOCUMENT_ROOT'] . "/../");
 	require("$path/config.php");

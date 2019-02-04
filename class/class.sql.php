@@ -4,6 +4,7 @@
 	query(SQL语句,[是否返回结果]);
 */
 	class sql{
+		public $check_str = $check = '/select|insert|update|CR|document|LF|eval|delete|script|alert|\'|\/\*|\#|\--|\ --|\/|\*|\-|\+|\=|\~|\*@|\*!|\$|\%|\^|\&|\(|\)|\/|\/\/|\.\.\/|\.\/|union|into|load_file|outfile/';;
 		public $location = "127.0.0.1";
 		public $usr;
 		public $pwd;
@@ -25,6 +26,13 @@
                 	return 1;
                 }
             }
+		}
+		
+		function input_check($input){
+			if(preg_match($this->check_str,$query)){
+				return 0;
+			}
+			return 1;
 		}
 		
 		function count_of($table){

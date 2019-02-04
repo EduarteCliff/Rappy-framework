@@ -1,5 +1,5 @@
 <?php
-	public $check_str = "^(.+)\\sand\\s(.+)|(.+)\\sor(.+)\\s$";
+	public $check_str = $check = '/select|insert|update|CR|document|LF|eval|delete|script|alert|\'|\/\*|\#|\--|\ --|\/|\*|\-|\+|\=|\~|\*@|\*!|\$|\%|\^|\&|\(|\)|\/|\/\/|\.\.\/|\.\/|union|into|load_file|outfile/';;
 	public sql;
 	
 	class user{
