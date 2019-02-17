@@ -11,7 +11,7 @@
 		function is_logged_in(){
 			if (isset($_SERVER['PHP_AUTH_USER']) || isset($_SERVER['PHP_AUTH_PW']){
 				if($_SERVER['PHP_AUTH_USER'] == $this->usr && $_SERVER['PHP_AUTH_PW'] == $this->pwd){
-					create_loggedin_session();
+					$this->create_loggedin_session();
 					return true;
 				}
 			}
@@ -23,7 +23,7 @@
 			return false;
 		}
 		
-		function need_login(){
+		function we_need_login(){
 			session_start();
 			if(!($this->is_logged_in())){
 				header("WWW-Authenticate:Basic realm=需要登陆");

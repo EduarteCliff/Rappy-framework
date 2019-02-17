@@ -53,8 +53,8 @@
     }
 ?>
           <form>
-            	<input type = "text" name="sendto">
-            	<button>发送测试邮件</button>
+                <input type = "text" name="sendto">
+				<button>发送测试邮件</button>
           </form>
           <?php
           		if(isset($_GET["sendto"])){

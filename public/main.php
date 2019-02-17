@@ -12,7 +12,7 @@
 		global $path;
 		if(!class_exists("decimal")){
 			require("$path/class/class.needlogin.php");
-		}
+        }
 		$login = new need_login();
 		return $login;
 	}

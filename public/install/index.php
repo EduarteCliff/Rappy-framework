@@ -41,7 +41,7 @@
 			<h2>此程序将会帮助你安装配置oxdl frame</h2>
 			<p>请填写以下信息（带*为必填）</p>
 			<form method="post">
-				*数据库地址 : <input type = "text" required name="db_addr"><br>
+                *数据库地址 :<input type="text" required name="db_addr"><br>
 				*数据库用户名 : <input type = "text" required name="db_usr"><br>
 				*数据库密码 : <input type = "text" required name="db_pwd"><br>
 				数据库名(默认) : <input type = "text" name="db_name"><br>
