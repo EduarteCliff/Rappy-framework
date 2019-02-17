@@ -1,6 +1,6 @@
 <?php
-	public $check_str = $check = '/select|insert|update|CR|document|LF|eval|delete|script|alert|\'|\/\*|\#|\--|\ --|\/|\*|\-|\+|\=|\~|\*@|\*!|\$|\%|\^|\&|\(|\)|\/|\/\/|\.\.\/|\.\/|union|into|load_file|outfile/';;
-	public sql;
+	public $check_str = $check = '/select|insert|update|CR|document|LF|eval|delete|script|alert|\'|\/\*|\#|\--|\ --|\/|\*|\-|\+|\=|\~|\*@|\*!|\$|\%|\^|\&|\(|\)|\/|\/\/|\.\.\/|\.\/|union|into|load_file|outfile/';
+	public $sql;
 	
 	class user{
 		function __construct(){
@@ -70,4 +70,3 @@
 			return true;
 		}
 	}
-?>

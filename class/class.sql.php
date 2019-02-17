@@ -4,7 +4,7 @@
 	query(SQL语句,[是否返回结果]);
 */
 	class sql{
-		public $check_str = $check = '/select|insert|update|CR|document|LF|eval|delete|script|alert|\'|\/\*|\#|\--|\ --|\/|\*|\-|\+|\=|\~|\*@|\*!|\$|\%|\^|\&|\(|\)|\/|\/\/|\.\.\/|\.\/|union|into|load_file|outfile/';;
+		public $check_str = '/select|insert|update|CR|document|LF|eval|delete|script|alert|\'|\/\*|\#|\--|\ --|\/|\*|\-|\+|\=|\~|\*@|\*!|\$|\%|\^|\&|\(|\)|\/|\/\/|\.\.\/|\.\/|union|into|load_file|outfile/';;
 		public $location = "127.0.0.1";
 		public $usr;
 		public $pwd;
@@ -40,4 +40,3 @@
 			return $result[0];
 		}
 	}
-?>

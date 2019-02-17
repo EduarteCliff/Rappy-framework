@@ -24,4 +24,3 @@
 			imagedestroy($imgInfo);
 		}
 	}
-?>

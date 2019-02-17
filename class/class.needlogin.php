@@ -27,10 +27,10 @@
 			session_start();
 			if(!($this->is_logged_in())){
 				header("WWW-Authenticate:Basic realm=需要登陆");
+				return false;
 			}
 			else{
 				return true;
 			}
 		}
 	}
-?>
